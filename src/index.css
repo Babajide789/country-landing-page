@@ -1,0 +1,12 @@
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: hsl(231, 69%, 60%); /* or your desired hover color */
+}
+
+
+

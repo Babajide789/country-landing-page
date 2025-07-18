@@ -1,0 +1,133 @@
+/* ===== Default (Light Theme) ===== */
+.app {
+  --bg-color: #f9f9f9;
+  --text-color: #2d314d;
+  --card-bg: #ffffff;
+  --nav-bg: #ffffff;
+  --input-bg: #ffffff;
+}
+
+/* ===== Dark Theme Overrides ===== */
+.app.dark {
+  --bg-color: #202d36;
+  --text-color: #ffffff;
+  --card-bg: #2b3945;
+  --nav-bg: #2b3945;
+  --input-bg: #2b3945;
+  
+}
+
+/* ===== Apply Theme Globally ===== */
+body, .app {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+/* Nav Styling */
+.nav-header {
+    position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(8px); /* 🧊 Backdrop blur */
+  background-color: rgba(255, 255, 255, 0.7); /* Light theme fallback */
+  color: var(--text-color);
+  padding: 0.75rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  height: 60px;
+}
+
+
+
+.nav-header button {
+  background-color: var(--btn-bg);
+  color: var(--btn-color);
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+/* Dark mode adjustment */
+.app.dark .nav-header {
+  background-color: rgba(43, 57, 69, 0.7); /* darker glass for dark theme */
+}
+
+.mode-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--btn-bg);
+  color: var(--btn-color);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.mode-toggle-btn:hover {
+  opacity: 0.9;
+}
+
+.mode-toggle-btn svg {
+  font-size: 1.1rem;
+}
+
+
+
+/* ===========================
+   📱 Tablet and Mobile Styles
+   =========================== */
+@media (max-width: 768px) {
+  .nav-header {
+    padding: 0.75rem 4%;
+    flex-direction: row;
+    align-items: flex-start;
+    height: auto;
+    gap: 10px;
+  }
+
+  .nav-header h1 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+
+  .mode-toggle-btn {
+    font-size: 0.9rem;
+    padding: 6px 14px;
+  }
+
+  .mode-toggle-btn svg {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-header {
+    padding: 0.75rem 3%;
+    gap: 8px;
+  }
+
+  .nav-header h1 {
+    font-size: 1rem;
+  }
+
+  .mode-toggle-btn {
+    font-size: 0.85rem;
+    padding: 5px 12px;
+  }
+
+  .mode-toggle-btn svg {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,85 @@
+/* ==== Root HTML Setup ==== */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", "Roboto", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ==== Light Theme ==== */
+.app {
+  --bg-color: #f9f9f9;
+  --text-color: #2d314d;
+  --card-bg: #ffffff;
+  --nav-bg: #ffffff;
+  --input-bg: #ffffff;
+  min-height: 100%;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* ==== Dark Theme Overrides ==== */
+.app.dark {
+  --bg-color: #202d36;
+  --text-color: #ffffff;
+  --card-bg: #2b3945;
+  --nav-bg: #2b3945;
+  --input-bg: #2b3945;
+}
+
+/* Ensure .app always fills screen */
+body, .app {
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ==== Navigation Bar ==== */
+.nav-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.7);
+  color: var(--text-color);
+  padding: 0.75rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  height: 60px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode nav bg */
+.app.dark .nav-header {
+  background-color: rgba(43, 57, 69, 0.7);
+}
+
+/* Toggle Button */
+.mode-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--btn-bg);
+  color: var(--btn-color);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.mode-toggle-btn:hover {
+  opacity: 0.9;
+}
+
+.mode-toggle-btn svg {
+  font-size: 1.1rem;
+}
+
